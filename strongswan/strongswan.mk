@@ -4,14 +4,17 @@
 #
 ################################################################################
 
-STRONGSWAN_VERSION = 5.7.2
+STRONGSWAN_VERSION = 5.8.1
 STRONGSWAN_SOURCE = strongswan-$(STRONGSWAN_VERSION).tar.bz2
 STRONGSWAN_SITE = http://download.strongswan.org
 STRONGSWAN_LICENSE = GPL-2.0+
 STRONGSWAN_LICENSE_FILES = COPYING LICENSE
 STRONGSWAN_DEPENDENCIES = host-pkgconf
 STRONGSWAN_INSTALL_STAGING = YES
+CMAKE_INSTALL_PREFIX = /var/lib/rancher/k3s/agent/strongswan
 STRONGSWAN_CONF_OPTS += \
+	--with-strongswan-conf=/var/lib/rancher/k3s/agent/strongswan.conf \
+	--with-swanctldir=/var/lib/rancher/k3s/agent/strongswan.d \
 	--enable-monolithic \
 	--enable-static \
 	--disable-shared \
