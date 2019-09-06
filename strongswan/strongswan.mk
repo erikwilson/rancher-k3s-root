@@ -14,7 +14,6 @@ STRONGSWAN_INSTALL_STAGING = YES
 STRONGSWAN_CONF_OPTS += \
 	--with-resolv-conf=/etc/resolv.conf \
 	--sysconfdir=/var/lib/rancher/k3s/agent/strongswan \
-	--runstatedir=/var/lib/rancher/k3s/agent/strongswan/run \
 	--enable-monolithic \
 	--enable-static \
 	--disable-shared \
