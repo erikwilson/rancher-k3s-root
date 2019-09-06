@@ -11,10 +11,10 @@ STRONGSWAN_LICENSE = GPL-2.0+
 STRONGSWAN_LICENSE_FILES = COPYING LICENSE
 STRONGSWAN_DEPENDENCIES = host-pkgconf
 STRONGSWAN_INSTALL_STAGING = YES
-CMAKE_INSTALL_PREFIX = /var/lib/rancher/k3s/agent/strongswan
 STRONGSWAN_CONF_OPTS += \
-	--with-strongswan-conf=/var/lib/rancher/k3s/agent/strongswan.conf \
-	--with-swanctldir=/var/lib/rancher/k3s/agent/strongswan.d \
+	--with-resolv-conf=/etc/resolv.conf \
+	--sysconfdir=/var/lib/rancher/k3s/agent/strongswan \
+	--runstatedir=/var/lib/rancher/k3s/agent/strongswan/run \
 	--enable-monolithic \
 	--enable-static \
 	--disable-shared \
